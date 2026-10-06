@@ -29,7 +29,7 @@ isucon12q(ISUCON12 予選)を Go 実装のみに削ぎ落としてモノレポ�
 ベース: matsuu/cloud-init-isucon の isucon12q.cfg。
 
 1. git clone 部分を isucon-go-only モノレポの sparse checkout に置き換え(GITDIR は元の `/tmp/isucon12-qualify` を維持):
-   `git clone --depth=1 --filter=blob:none --sparse https://github.com/Lumonde-software/isucon-go-only.git` →
+   `git clone --depth=1 --filter=blob:none --sparse https://github.com/team-hacker-isucon/isucon-go-only.git` →
    `sparse-checkout set isucon12q` → `mv` で GITDIR へ
 2. 非 x86_64 向けの `sed -i -e "s/mysql-client/default-mysql-client/" ${GITDIR}/webapp/*/Dockerfile` を削除。
    現行の `webapp/go/Dockerfile` は既に `default-mysql-client` を使っており、この sed を残すと

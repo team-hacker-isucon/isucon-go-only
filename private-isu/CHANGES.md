@@ -35,7 +35,7 @@
 
 ## cfg の変更点
 
-3 ファイルとも `GITDIR="/tmp/private-isu"` は元の値のまま、git clone 部分を Lumonde-software/isucon-go-only の sparse checkout(`private-isu` ディレクトリのみ取得して `${GITDIR}` へ配置)に変更。
+3 ファイルとも `GITDIR="/tmp/private-isu"` は元の値のまま、git clone 部分を team-hacker-isucon/isucon-go-only の sparse checkout(`private-isu` ディレクトリのみ取得して `${GITDIR}` へ配置)に変更。
 
 - `app.cfg`: 上記に加え `--skip-tags nodejs` を削除(nodejs タグのタスク自体を削除済みのため)
 - `benchmarker.cfg`: clone 部分のみ変更

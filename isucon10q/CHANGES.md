@@ -24,7 +24,7 @@ Go 以外の言語実装と、その言語専用セットアップのみ削除�
   (`bench.yaml` は元々 Go 関連ロールのみで修正不要)
 - `provisioning/ansible/roles/web-bootstrap/tasks/main.yaml` の「Clone isucon10-qualify」タスク:
   元は `matsuu/isucon10-qualify.git`(branch: `fixed`)を git モジュールで /tmp に clone していたが、
-  本モノレポ(`Lumonde-software/isucon-go-only.git` の `isucon10q/`)の sparse clone に置き換え。
+  本モノレポ(`team-hacker-isucon/isucon-go-only.git` の `isucon10q/`)の sparse clone に置き換え。
   後続タスク(chgroup → mv /tmp/isucon10-qualify → /home/isucon/isuumo)は無変更で成立する
 - `provisioning/ansible/roles/remove/tasks/main.yaml`: 削除済み言語ディレクトリ配下
   (`webapp/{deno,nodejs,python,perl,rust,php,ruby}/Dockerfile`, `webapp/php/docker-compose.override.yml`)のエントリを削除
@@ -39,7 +39,7 @@ Go 以外の言語実装と、その言語専用セットアップのみ削除�
 
 - 参考 cfg(cloud-init-isucon/isucon10q)からの変更は git clone 部分のみ:
   `matsuu/isucon10-qualify.git`(-b fixed-aarch64)の clone を、
-  `Lumonde-software/isucon-go-only.git` の sparse clone + `isucon10q` サブディレクトリの mv に置き換え
+  `team-hacker-isucon/isucon-go-only.git` の sparse clone + `isucon10q` サブディレクトリの mv に置き換え
 - `GITDIR="${HOME}/isucon10-qualify"` は元の値を維持
 - 元 cfg に sed やパッチは存在しない。cfg が依存するパスは
   `${GITDIR}/provisioning/ansible/allinone.yaml` のみで、削ぎ落とし後も存在することを確認済み

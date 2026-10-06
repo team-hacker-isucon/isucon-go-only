@@ -38,7 +38,7 @@ isucon/isucon13 の main(8f6afdc3)をベースに、Go 実装だけで練習・�
 
 ベース: cloud-init-isucon の isucon13.cfg(README は README.cloud-init.md として同梱)。
 
-- 変更は git clone 部分のみ。`https://github.com/isucon/isucon13.git` の clone を、本モノレポ(Lumonde-software/isucon-go-only)の sparse checkout(`isucon13` ディレクトリのみ取得し `${GITDIR}` へ配置)に置き換えた。`GITDIR="/tmp/isucon13"` は元の値を維持
+- 変更は git clone 部分のみ。`https://github.com/isucon/isucon13.git` の clone を、本モノレポ(team-hacker-isucon/isucon-go-only)の sparse checkout(`isucon13` ディレクトリのみ取得し `${GITDIR}` へ配置)に置き換えた。`GITDIR="/tmp/isucon13"` は元の値を維持
 - cfg 内の全 sed・パッチの成立性を削ぎ落とし後のツリーで確認済み:
   - `u.isucon.dev → u.isucon.local` の一括置換、nginx tls ディレクトリへの自己署名証明書生成: 対象パス存在 OK
   - `webapp/pdns/u.isucon.dev.zone` の mv: 存在 OK

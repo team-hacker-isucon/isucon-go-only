@@ -16,7 +16,7 @@
 - name: Clone isucon12f from isucon-go-only (sparse)
   become: true
   shell: |
-    git clone --depth=1 --filter=blob:none --sparse https://github.com/Lumonde-software/isucon-go-only.git /tmp/isucon-go-only
+    git clone --depth=1 --filter=blob:none --sparse https://github.com/team-hacker-isucon/isucon-go-only.git /tmp/isucon-go-only
     git -C /tmp/isucon-go-only sparse-checkout set isucon12f
     mv /tmp/isucon-go-only/isucon12f /home/isucon/isucon12-final
     rm -rf /tmp/isucon-go-only

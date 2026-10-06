@@ -156,7 +156,7 @@ $ ./bench_linux_amd64 run --target https://pipe.u.isucon.dev \
 * このリポジトリを手元に用意します
 
   ```sh
-  git clone https://github.com/Lumonde-software/isucon-go-only.git
+  git clone https://github.com/team-hacker-isucon/isucon-go-only.git
   cd isucon-go-only
   ```
 

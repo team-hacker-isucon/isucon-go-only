@@ -3,7 +3,7 @@ node[:isucon11_repository] = '/home/isuadmin/src/isucon11-prior'
 execute 'clone repository' do
   command <<-EOC
   rm -rf /tmp/isucon-go-only
-  git clone --depth=1 --filter=blob:none --sparse https://github.com/Lumonde-software/isucon-go-only.git /tmp/isucon-go-only
+  git clone --depth=1 --filter=blob:none --sparse https://github.com/team-hacker-isucon/isucon-go-only.git /tmp/isucon-go-only
   git -C /tmp/isucon-go-only sparse-checkout set isucon11-prior
   git -C /tmp/isucon-go-only rev-parse HEAD > /tmp/isucon-go-only/isucon11-prior/REVISION
   mkdir -p $(dirname #{node[:isucon11_repository]})

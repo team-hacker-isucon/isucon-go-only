@@ -241,7 +241,7 @@ https://gist.github.com/tohutohu/024551682a9004da286b0abd6366fa55 を参照
 * このリポジトリを手元に用意します
 
   ```sh
-  git clone https://github.com/Lumonde-software/isucon-go-only.git
+  git clone https://github.com/team-hacker-isucon/isucon-go-only.git
   cd isucon-go-only
   ```
 

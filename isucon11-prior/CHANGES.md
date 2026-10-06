@@ -43,7 +43,7 @@ nginx の upstream は 127.0.0.1:9292 のままで変更不要(Go 実装も 9292
 `/home/isuadmin/src/isucon11-prior` へ clone し、`git pull` ベースの
 `update repository` で REVISION を生成していた。go-only 版では:
 
-- clone 元を `https://github.com/Lumonde-software/isucon-go-only.git` の sparse checkout
+- clone 元を `https://github.com/team-hacker-isucon/isucon-go-only.git` の sparse checkout
   (`isucon11-prior` サブディレクトリ)に変更し、`mv` で同じパスへ配置
 - `mv` 後は git リポジトリでなくなるため `update repository`(git pull / checkout origin/main)を削除。
   代わりに clone 時に `git rev-parse HEAD` で `REVISION` ファイルを生成
@@ -56,7 +56,7 @@ nginx の upstream は 127.0.0.1:9292 のままで変更不要(Go 実装も 9292
 `/tmp/isucon11-prior` を維持:
 
 - `git clone --depth=1 -b support-non-amd64-arch matsuu/isucon11-prior` →
-  Lumonde-software/isucon-go-only を `--depth=1 --filter=blob:none --sparse` で
+  team-hacker-isucon/isucon-go-only を `--depth=1 --filter=blob:none --sparse` で
   `/tmp/isucon-go-only` に clone し、`sparse-checkout set isucon11-prior` 後に
   `mv` で `${GITDIR}` へ配置
 

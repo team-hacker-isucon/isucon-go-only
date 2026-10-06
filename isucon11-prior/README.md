@@ -8,7 +8,7 @@ ISUCON11事前講習の問題を Go 実装のみに削ぎ落としたもの。�
 * このリポジトリを手元に用意します
 
   ```sh
-  git clone https://github.com/Lumonde-software/isucon-go-only.git
+  git clone https://github.com/team-hacker-isucon/isucon-go-only.git
   cd isucon-go-only
   ```
 

@@ -39,7 +39,7 @@
   - Copy files の with_items から削除済みファイル(他言語 systemd unit・isuconquest-php.conf・php-fpm conf)を除去
   - Build rust application / Clone ext-apfd / ext-apfd build / composer install(php)/ npm install(node)/ cpm permission・cpm install(perl)/ bundle install(ruby)の各タスクを削除
   - 「Enable isuconquest.go.service」はもともと Go を有効化する内容のためそのまま(デフォルトが Go なので切り替えの焼き込みは不要)
-- `provisioning/packer/ansible/roles/repository/tasks/main.yml`: `/home/isucon/isucon12-final` への clone 元を isucon/isucon12-final から本モノレポ(Lumonde-software/isucon-go-only の isucon12f を sparse-checkout して mv)に変更。ansible の git モジュールは sparse 非対応のため shell タスク化
+- `provisioning/packer/ansible/roles/repository/tasks/main.yml`: `/home/isucon/isucon12-final` への clone 元を isucon/isucon12-final から本モノレポ(team-hacker-isucon/isucon-go-only の isucon12f を sparse-checkout して mv)に変更。ansible の git モジュールは sparse 非対応のため shell タスク化
 - `provisioning/packer/ansible/roles/xbuild/files/home/isucon/.local.env`: golang の PATH 行のみ残し、node/cargo/php/ruby/perl の PATH 行を削除
 - `provisioning/packer/ansible/roles/xbuild/files/home/isucon/env`: `PERL5LIB=...` 行を削除
 
@@ -47,7 +47,7 @@
 
 元 cfg(cloud-init-isucon/isucon12f/isucon12f.cfg)からの差分は git clone 部分のみ:
 
-- `git clone --depth=1 https://github.com/isucon/isucon12-final.git ${GITDIR}` を、Lumonde-software/isucon-go-only を `--depth=1 --filter=blob:none --sparse` で clone → `sparse-checkout set isucon12f` → `mv` で `${GITDIR}` に配置する形に変更
+- `git clone --depth=1 https://github.com/isucon/isucon12-final.git ${GITDIR}` を、team-hacker-isucon/isucon-go-only を `--depth=1 --filter=blob:none --sparse` で clone → `sparse-checkout set isucon12f` → `mv` で `${GITDIR}` に配置する形に変更
 - `GITDIR="/tmp/isucon12-final"` は元の値のまま維持
 - それ以外(make initial-data、sed、ansible-playbook、ansible purge、サービス再起動)は元のまま
 

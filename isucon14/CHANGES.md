@@ -59,7 +59,7 @@ isucon/isucon14 を Go 実装のみに削ぎ落としてモノレポに配置し
 cloud-init-isucon の isucon14.cfg をベースに配置。変更は git clone 部分のみ:
 
 - 変更前: `rm -rf ${GITDIR}` + `git clone --depth=1 https://github.com/isucon/isucon14.git ${GITDIR}`
-- 変更後: Lumonde-software/isucon-go-only を sparse checkout して `isucon14/` サブディレクトリを `${GITDIR}` に移動する方式（`GITDIR="/tmp/isucon14"` は元の値のまま）
+- 変更後: team-hacker-isucon/isucon-go-only を sparse checkout して `isucon14/` サブディレクトリを `${GITDIR}` に移動する方式（`GITDIR="/tmp/isucon14"` は元の値のまま）
 
 cfg 内の sed・パッチの成立性を削ぎ落とし後のツリーに対して確認済み:
 
