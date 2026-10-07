@@ -17,6 +17,14 @@
     state: present
     system: no
 
+# Ubuntu 21.04以降はホームディレクトリがデフォルト0750で作成され、
+# nginx(www-data)が /home/isucon/webapp/frontend/dist を配信できない
+- name: "Ensure /home/isucon is world traversable"
+  file:
+    path: /home/isucon
+    state: directory
+    mode: "0755"
+
 #- name: "Create isucon-admin group"
 #  group:
 #    name: isucon-admin

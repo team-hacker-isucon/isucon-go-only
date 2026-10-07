@@ -11,6 +11,12 @@ user 'isucon' do
   create_home true
 end
 
+# Ubuntu 21.04以降はホームディレクトリがデフォルト0750で作成され、
+# nginx(www-data)が /home/isucon/webapp/frontend/dist を配信できない
+directory '/home/isucon' do
+  mode '755'
+end
+
 remote_file '/home/isucon/.gitconfig' do
   owner 'isucon'
   group 'isucon'

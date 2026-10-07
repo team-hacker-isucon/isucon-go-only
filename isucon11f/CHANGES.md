@@ -83,3 +83,10 @@ Ubuntu 22.04 (jammy) でプロビジョニングできるように静的確認�
 - ansible タスクの `include:`(roles/{contestant,bench} の main.yml 等)は deprecated。22.04 同梱の ansible では警告のみで動作するが、ansible-core 2.16 以降(Ubuntu 24.04 の同梱版など)では削除済みのため、将来は `import_tasks:` への置換が必要
 - `mysql_native_password` は MySQL 8.4 で無効化・9.0 で削除。22.04(MySQL 8.0)では影響なし
 - `roles/common` の「Purge snapd」は apt パッケージ名 `snap`/`snapd` を absent 指定しており、将来のリリースで `snap` パッケージ(別物の bioinformatics ツール)が消えると apt モジュールがエラーになる可能性がある。22.04 では両方とも存在するため問題なし
+
+## /home/isucon のパーミッション修正(Ubuntu 22.04対応の追補)
+
+Ubuntu 21.04以降は useradd のデフォルトホーム権限が 0750 のため、nginx(www-data)が
+/home/isucon 配下の静的ファイルを配信できず GET / が 500(try_filesの内部リダイレクトループ)になる。
+ユーザー作成直後に /home/isucon を 0755 にするタスクを追加した。
+既存環境では `sudo chmod 755 /home/isucon` で解消する。

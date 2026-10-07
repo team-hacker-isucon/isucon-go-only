@@ -112,3 +112,10 @@ Ubuntu 20.04 前提だったプロビジョニングを Ubuntu 22.04 (jammy) で
   使われないため未修正
 - `README.cloud-init.md` の 18.04 記載は upstream 由来のまま(本モノレポの起動手順は
   ルート README.md の Multipass 手順を正とする)
+
+## /home/isucon のパーミッション修正(Ubuntu 22.04対応の追補)
+
+Ubuntu 21.04以降は useradd のデフォルトホーム権限が 0750 のため、nginx(www-data)が
+/home/isucon 配下の静的ファイルを配信できず GET / が 500(try_filesの内部リダイレクトループ)になる。
+ユーザー作成直後に /home/isucon を 0755 にするタスクを追加した。
+既存環境では `sudo chmod 755 /home/isucon` で解消する。

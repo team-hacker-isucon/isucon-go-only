@@ -114,3 +114,10 @@ Ubuntu 22.04 (jammy) でプロビジョニングできるよう以下を修正(�
 - ベンチ実行は `sudo su - isucon` 後 `./bin/benchmarker`(README.cloud-init.md 参照)
 - sparse checkout は git 2.25(Ubuntu 20.04 標準)以上が必要
 - アプリコードのチューニングは行っていない(忠実な go-only 化のみ)
+
+## /home/isucon のパーミッション修正(Ubuntu 22.04対応の追補)
+
+Ubuntu 21.04以降は useradd のデフォルトホーム権限が 0750 のため、nginx(www-data)が
+/home/isucon 配下の静的ファイルを配信できず GET / が 500(try_filesの内部リダイレクトループ)になる。
+ユーザー作成直後に /home/isucon を 0755 にするタスクを追加した。
+既存環境では `sudo chmod 755 /home/isucon` で解消する。
